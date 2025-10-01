@@ -2,6 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('anggota', function () {
+Route::get('/anggota', function () {
     return view('anggota');
 });
