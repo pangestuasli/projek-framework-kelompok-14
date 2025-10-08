@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/anggota', function () {
     return view('anggota');
 });
+
 Route::get('/ketua', function () {
     return view('ketua');
 });
+
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
