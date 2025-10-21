@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\JenisDokumen;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,54 +12,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
-    }
+        $totalJenisDokumen = JenisDokumen::count();
+        $totalDokumen = 0; // Placeholder - bisa diisi dengan model dokumen jika ada
+        $totalAnggota = 0; // Placeholder - bisa diisi dengan model anggota jika ada
+        $totalKetua = 0; // Placeholder - bisa diisi dengan model ketua jika ada
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return view('admin.dashboard', compact(
+            'totalJenisDokumen',
+            'totalDokumen',
+            'totalAnggota',
+            'totalKetua'
+        ));
     }
 }
