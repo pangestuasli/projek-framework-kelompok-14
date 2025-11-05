@@ -35,7 +35,7 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="nama">Nama Jenis Dokumen <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" 
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror"
                                id="nama" name="nama" value="{{ old('nama', $jenisDokumen->nama) }}" required>
                         @error('nama')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -44,7 +44,7 @@
 
                     <div class="form-group">
                         <label for="deskripsi">Deskripsi</label>
-                        <textarea class="form-control @error('deskripsi') is-invalid @enderror" 
+                        <textarea class="form-control @error('deskripsi') is-invalid @enderror"
                                   id="deskripsi" name="deskripsi" rows="4">{{ old('deskripsi', $jenisDokumen->deskripsi) }}</textarea>
                         @error('deskripsi')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -53,7 +53,7 @@
 
                     <div class="form-group">
                         <label for="status">Status <span class="text-danger">*</span></label>
-                        <select class="form-control @error('status') is-invalid @enderror" 
+                        <select class="form-control @error('status') is-invalid @enderror"
                                 id="status" name="status" required>
                             <option value="">Pilih Status</option>
                             <option value="aktif" {{ old('status', $jenisDokumen->status) == 'aktif' ? 'selected' : '' }}>Aktif</option>
@@ -95,13 +95,13 @@
                 </p>
                 <hr>
                 <p class="text-muted small">
-                    <i class="fas fa-info-circle"></i> 
+                    <i class="fas fa-info-circle"></i>
                     Field yang bertanda <span class="text-danger">*</span> wajib diisi.
                 </p>
                 <hr>
                 <p class="text-muted small">
                     <strong>Dibuat:</strong> {{ $jenisDokumen->created_at->format('d/m/Y H:i') }}<br>
-                    <strong>Diupdate:</strong> {{ $jenisDokumen->updated_at->format('d/m/Y H:i') }}
+                    <strong>Diupdate:</strong> {{ $jenisDokumen->updated_at->format('d/m/Y H:i') }} 
                 </p>
             </div>
         </div>
